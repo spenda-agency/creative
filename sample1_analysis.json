@@ -1,0 +1,195 @@
+{
+  "total_images": 16,
+  "patterns": {
+    "1A": [
+      {
+        "filename": "1A_1080×1080.png",
+        "size": "1080×1080",
+        "width": 1080,
+        "height": 1080,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 854.03,
+        "base_name": "1A",
+        "pattern": null
+      },
+      {
+        "filename": "1A_1200×628.png",
+        "size": "1200×628",
+        "width": 1200,
+        "height": 628,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 458.58,
+        "base_name": "1A",
+        "pattern": null
+      },
+      {
+        "filename": "1A_300×250.png",
+        "size": "300×250",
+        "width": 300,
+        "height": 250,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 88.0,
+        "base_name": "1A",
+        "pattern": null
+      }
+    ],
+    "1B": [
+      {
+        "filename": "1B_1080×1080.png",
+        "size": "1080×1080",
+        "width": 1080,
+        "height": 1080,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 828.8,
+        "base_name": "1B",
+        "pattern": null
+      },
+      {
+        "filename": "1B_1200×628.png",
+        "size": "1200×628",
+        "width": 1200,
+        "height": 628,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 433.52,
+        "base_name": "1B",
+        "pattern": null
+      },
+      {
+        "filename": "1B_300×250.png",
+        "size": "300×250",
+        "width": 300,
+        "height": 250,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 79.8,
+        "base_name": "1B",
+        "pattern": null
+      }
+    ],
+    "2509_1080_1080": [
+      {
+        "filename": "2509_1080_1080_A.png",
+        "size": null,
+        "width": 1080,
+        "height": 1080,
+        "format": "PNG",
+        "mode": "RGB",
+        "file_size_kb": 162.83,
+        "base_name": "2509_1080_1080",
+        "pattern": "A"
+      },
+      {
+        "filename": "2509_1080_1080_B.png",
+        "size": null,
+        "width": 1080,
+        "height": 1080,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 263.72,
+        "base_name": "2509_1080_1080",
+        "pattern": "B"
+      }
+    ],
+    "2509_1200_628": [
+      {
+        "filename": "2509_1200_628_A.png",
+        "size": null,
+        "width": 1200,
+        "height": 628,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 193.77,
+        "base_name": "2509_1200_628",
+        "pattern": "A"
+      },
+      {
+        "filename": "2509_1200_628_B.png",
+        "size": null,
+        "width": 1200,
+        "height": 628,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 193.78,
+        "base_name": "2509_1200_628",
+        "pattern": "B"
+      }
+    ],
+    "2510_1080_1080": [
+      {
+        "filename": "2510_1080_1080_a.png",
+        "size": null,
+        "width": 1080,
+        "height": 1080,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 269.7,
+        "base_name": "2510_1080_1080",
+        "pattern": "a"
+      },
+      {
+        "filename": "2510_1080_1080_b.png",
+        "size": null,
+        "width": 1080,
+        "height": 1080,
+        "format": "PNG",
+        "mode": "RGBA",
+        "file_size_kb": 262.68,
+        "base_name": "2510_1080_1080",
+        "pattern": "b"
+      }
+    ],
+    "2510_1200_628": [
+      {
+        "filename": "2510_1200_628_a.png",
+        "size": null,
+        "width": 1200,
+        "height": 628,
+        "format": "PNG",
+        "mode": "RGB",
+        "file_size_kb": 135.12,
+        "base_name": "2510_1200_628",
+        "pattern": "a"
+      },
+      {
+        "filename": "2510_1200_628_b.png",
+        "size": null,
+        "width": 1200,
+        "height": 628,
+        "format": "PNG",
+        "mode": "RGB",
+        "file_size_kb": 132.94,
+        "base_name": "2510_1200_628",
+        "pattern": "b"
+      }
+    ],
+    "2510_300_250": [
+      {
+        "filename": "2510_300_250_a.png",
+        "size": null,
+        "width": 300,
+        "height": 250,
+        "format": "PNG",
+        "mode": "RGB",
+        "file_size_kb": 37.39,
+        "base_name": "2510_300_250",
+        "pattern": "a"
+      },
+      {
+        "filename": "2510_300_250_b.png",
+        "size": null,
+        "width": 300,
+        "height": 250,
+        "format": "PNG",
+        "mode": "RGB",
+        "file_size_kb": 37.15,
+        "base_name": "2510_300_250",
+        "pattern": "b"
+      }
+    ]
+  }
+}
