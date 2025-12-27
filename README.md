@@ -12,7 +12,11 @@ creative/
 ├── combinations/        # A/Bテストの組み合わせ定義ファイル（JSON）
 ├── scripts/             # 自動化スクリプト
 ├── archive/             # 過去の素材（アーカイブ）
-└── .github/             # GitHubテンプレート
+├── outputs/            # 完成した広告画像（プラットフォーム別）
+│   ├── google/         # Google広告用
+│   └── meta/           # Meta広告用
+├── sample1/            # サンプル画像
+└── .github/            # GitHubテンプレート
 ```
 
 ## 🚀 クイックスタート
@@ -22,13 +26,11 @@ creative/
 素材・背景・キャッチコピーの案を自動生成します。
 
 ```bash
-# 全てのカテゴリから10件ずつ案を生成
-python scripts/generate_ideas.py --all --count 10
+# HANOWAブランド向けの案を生成（推奨）
+python scripts/generate_hanowa_ideas.py --all --count 15
 
-# 特定のカテゴリのみ
-python scripts/generate_ideas.py --type material --count 15
-python scripts/generate_ideas.py --type background --count 15
-python scripts/generate_ideas.py --type copy --count 15 --theme 時短
+# 汎用的な案を生成
+python scripts/generate_ideas.py --all --count 10
 ```
 
 ### 2. 組み合わせの作成
@@ -44,28 +46,29 @@ python scripts/create_combination.py \
   --description "時短訴求、女性ターゲット向け"
 ```
 
-### 3. 組み合わせの確認
+### 3. 広告サイズ別の出力
 
-```bash
-# 一覧表示
-python scripts/create_combination.py --list
+各プラットフォームのサイズに対応した画像を作成します。
 
-# 比較
-python scripts/create_combination.py --compare pattern-A pattern-B
-```
+詳細は [AD_SIZES_GUIDE.md](AD_SIZES_GUIDE.md) を参照してください。
+
+**対応サイズ:**
+- **Google広告**: 300×250, 336×280, 300×300, 1200×628
+- **Meta広告**: 1200×1200, 1080×1920
 
 ## 📝 運用フロー
 
 ### 月次サイクル
 
 1. **月初め**: GitHub Issueで今月の制作タスクを作成
-2. **案出し**: `generate_ideas.py`で大量の案を生成
+2. **案出し**: `generate_hanowa_ideas.py`で大量の案を生成
 3. **選定**: 案から良さそうなものを選定
 4. **組み合わせ**: `create_combination.py`でテストパターンを作成
 5. **制作**: 外部ツール（Figma等）で実際の画像を作成
-6. **PR作成**: 変更をプルリクエストで提出し、Image Diffで比較
-7. **テスト**: A/Bテストを実施
-8. **記録**: 結果をIssueに記録し、次月に活かす
+6. **出力**: 各プラットフォームのサイズに合わせて出力
+7. **PR作成**: 変更をプルリクエストで提出し、Image Diffで比較
+8. **テスト**: A/Bテストを実施
+9. **記録**: 結果をIssueに記録し、次月に活かす
 
 ## 🛠️ Cursorでの使い方
 
@@ -84,13 +87,12 @@ python scripts/create_combination.py --compare pattern-A pattern-B
 どの組み合わせが最も効果的そうか、理由と共に提案して。」
 ```
 
-### PR作成の指示
+### 広告サイズ対応の指示
 
 ```
-「今回更新した assets/ と backgrounds/ 内の画像と、
-copy/ 内の新コピーを元に、GitHubのプルリクエスト用の説明文を作成して。
-前回のテスト結果（Issue #10）で『青色よりオレンジの方が反応が良かった』
-という知見があったので、それを踏まえて今回の背景を選んだことも記載して。」
+「pattern-AのデザインをGoogle広告の全サイズ
+（300×250, 336×280, 300×300, 1200×628）に対応させて。
+各サイズのレイアウト調整も含めて。」
 ```
 
 ## 📊 GitHub Projectsでの管理
@@ -108,11 +110,14 @@ copy/ 内の新コピーを元に、GitHubのプルリクエスト用の説明�
 - **素材・背景**: `YYYY-MM-[要素名]-[識別子].png`
 - **キャッチコピー**: `YYYY-MM-copy-[識別子].txt`
 - **組み合わせ**: `pattern-[A-Z].json`
+- **出力画像**: `[パターン名]_[platform]_[サイズ].png`
 
 例：
 - `2025-01-material-hero.png`
 - `2025-01-background-gradient-blue.jpg`
 - `2025-01-copy-short-time.txt`
+- `pattern-A_google_300x250.png`
+- `pattern-A_meta_1200x1200.png`
 
 ## 📦 Git LFSの設定（推奨）
 
@@ -131,8 +136,8 @@ git add .gitattributes
 ### Figmaからの書き出し
 
 1. Figmaで画像を書き出し
-2. `exports/` フォルダに配置
-3. `scripts/sync_ads.py`（作成予定）で自動整理
+2. `outputs/` フォルダにプラットフォーム別・サイズ別に配置
+3. 命名規則に従ってファイル名を変更
 
 ### A/Bテスト結果の記録
 
@@ -152,10 +157,10 @@ git add .gitattributes
 - 短いコピー（10文字以下）が効果的
 ```
 
-## 📚 参考資料
+## 📚 ドキュメント
 
-- [GitHub Image Diffの使い方](https://docs.github.com/ja/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)
-- [Git LFSの設定](https://git-lfs.github.com/)
+- [AD_SIZES_GUIDE.md](AD_SIZES_GUIDE.md) - 広告サイズ別出力ガイド
+- [USAGE.md](USAGE.md) - 詳細な使い方ガイド
 
 ## 🤝 コントリビューション
 
